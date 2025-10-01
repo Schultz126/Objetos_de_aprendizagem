@@ -3,7 +3,7 @@
 #array {
     display: flex;
     flex-flow: row wrap;
-    max-width: 70dvw;
+    max-width: 50dvw;
     margin: auto;
     border: 1px solid black;
     justify-content: space-evenly;
