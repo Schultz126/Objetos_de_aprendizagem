@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+#array {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 70dvw;
+    margin: auto;
+    border: 1px solid black;
+    justify-content: space-evenly;
+}
+
+.number_box {
+    flex: 0 1 50px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    min-width: none;
+    height: 50px;
+}
+
+.value_container {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.value {
+    flex: none;
+}
