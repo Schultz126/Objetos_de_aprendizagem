@@ -1,7 +1,7 @@
-var searchedNumber;
-var array = document.getElementsByClassName('value');
-let fullValueBox = document.getElementsByClassName("number_box");
-let isSearching = false;
+var searchedNumber; // Valor a ser buscado
+var array = document.getElementsByClassName('value'); // Vetor para todas as caixas possuindo números
+let fullValueBox = document.getElementsByClassName("number_box"); // Vetor para a caixa mais externa. Necessário para colorir o elemento
+let isSearching = false; // Verifica se a busca está sendo realizada. Serve de controle para o botão button#nextStep
 // objeto DOM agrupado junto do índice atual
 let currentInfo = {current: fullValueBox[0], index: 0}
 var list = [];
@@ -18,7 +18,7 @@ document.querySelector('button#submitButton').addEventListener('click', function
         }
         search(0);
     }
-    });
+});
 
 function search(index) {
     isSearching = true;
@@ -57,6 +57,8 @@ document.querySelector('button#nextStep').addEventListener('click', function() {
     }
 })
 
+// Função para restaurar os valores iniciais de cada elemento. Ela se faz necessária na medida em que 
+// o vetor é completamente lido, ou no caso da chave ter sido encontrada
 function reset() {
     for(let i = 0; i < 8; i++) {
         fullValueBox[i].classList.remove("correct", "passed", "current");
