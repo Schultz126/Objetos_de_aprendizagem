@@ -5,26 +5,64 @@
     margin: 0px;
 }
 
-header {
-    border: 0px solid black;
-    background-color: lightgray;
-    padding: 10px;
-    margin-bottom: 10px;
+body {
+    background-color: #51557a51;
 }
 
+/* ESTILOS HEADER*/
+
+header {
+    border: 0px solid black;
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    width: 85dvw;
+    margin: auto;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.244);
+}
+
+header > h1 {
+    text-align: center;
+    margin: 10px;
+}
+
+menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.menuItem {
+    margin: 0px 10px;
+}
+
+/* FIM ESTILOS HEADER*/
 .button {
     padding: 5px;
     border-radius: 5px;
     margin-top: 5px;
+    background-color: #283EFA;
+    color: white;
+    font-weight: 600;
 }
 
+/* ESTILOS ARRAY */
 #array_container {
-    border: 1px solid black;
     padding: 10px;
+    background-color: white;
+    width: 85dvw;
+    margin: auto;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.244);
 }
 
 #status {
     border: 1px solid black;
+    margin: 0px 5px;
     width: fit-content;
     padding: 5px;
     margin-top: 5px;
@@ -35,3 +73,5 @@ header {
     flex-flow: row wrap;
     justify-content: center;
 }
+/* FIM ESTILOS ARRAY */
+

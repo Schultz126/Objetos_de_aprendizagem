@@ -28,10 +28,12 @@ function search(index) {
         document.querySelector("article#status").classList.add("correct");
         // Todas as propriedades do início da busca são alteradas para o estado original
         isSearching = false;
+    } else {
+        currentInfo.current.classList.add("current"); 
+        document.querySelector("article#status").textContent = "Não encontrado";
+        document.querySelector("article#status").classList.add("current");
     }
-    currentInfo.current.classList.add("current"); 
-    document.querySelector("article#status").textContent = "Não encontrado";
-    document.querySelector("article#status").classList.add("current");
+    
       
 }
 

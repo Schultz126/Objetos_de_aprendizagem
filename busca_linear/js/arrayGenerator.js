@@ -6,7 +6,6 @@ function generateArray() {
     for(let i = 0; i < 10; i++) {
         button[i].textContent = Math.floor(Math.random() * 99 + 1);
     }
-    reset();
 }
 
 
