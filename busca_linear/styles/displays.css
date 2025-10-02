@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.current {
+    background-color: rgb(148, 117, 25);
+}
+
+.passed {
+    background-color: rgb(148, 25, 25);
+}
+
+
+.correct {
+    background-color: rgb(25, 148, 29);
+}
