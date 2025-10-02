@@ -1,0 +1,204 @@
+<!--Este código NÃO foi desenvolvido por mim, apenas se encontra aqui para complementar o restante do material-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filas e Pilhas - Objeto de Aprendizagem Interativo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .structure {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .elements {
+            min-height: 100px;
+            border: 2px dashed #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .queue-elements {
+            flex-direction: row;
+            overflow-x: auto;
+        }
+        .stack-elements {
+            flex-direction: column-reverse;
+        }
+        .element {
+            background-color: #4a90e2;
+            color: white;
+            margin: 5px;
+            padding: 10px;
+            text-align: center;
+            min-width: 50px;
+            border-radius: 4px;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .explanation {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+        .instructions {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+            .structure {
+                width: calc(50% - 10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Estrutura de Dados UEPG</h1>
+    <h1>Professores Albino Szesz Junior e Márcio Augusto de Souza</h1>
+    <h1>Filas e Pilhas</h1>
+    
+    <div class="instructions">
+        <h2>Instruções de Uso:</h2>
+        <ol>
+            <li>Observe as duas estruturas: Fila (FIFO) e Pilha (LIFO).</li>
+            <li>Para adicionar elementos:
+                <ul>
+                    <li>Digite um valor no campo de texto correspondente.</li>
+                    <li>Clique em "Enfileirar" para adicionar à Fila ou "Empilhar" para adicionar à Pilha.</li>
+                </ul>
+            </li>
+            <li>Para remover elementos:
+                <ul>
+                    <li>Clique em "Desenfileirar" para remover da Fila ou "Desempilhar" para remover da Pilha.</li>
+                </ul>
+            </li>
+            <li>Observe as explicações que aparecem abaixo de cada estrutura após cada operação.</li>
+            <li>Compare o comportamento da Fila (primeiro a entrar, primeiro a sair) com o da Pilha (último a entrar, primeiro a sair).</li>
+        </ol>
+    </div>
+    
+    <div class="container">
+        <div class="structure">
+            <h2>Fila (FIFO)</h2>
+            <div id="queueElements" class="elements queue-elements"></div>
+            <input type="text" id="queueInput" placeholder="Digite um elemento para a fila">
+            <button onclick="enqueue()">Enfileirar</button>
+            <button onclick="dequeue()">Desenfileirar</button>
+            <div id="queueExplanation" class="explanation"></div>
+        </div>
+        
+        <div class="structure">
+            <h2>Pilha (LIFO)</h2>
+            <div id="stackElements" class="elements stack-elements"></div>
+            <input type="text" id="stackInput" placeholder="Digite um elemento para a pilha">
+            <button onclick="push()">Empilhar</button>
+            <button onclick="pop()">Desempilhar</button>
+            <div id="stackExplanation" class="explanation"></div>
+        </div>
+    </div>
+
+    <script>
+        let queue = [];
+        let stack = [];
+
+        function updateDisplay() {
+            document.getElementById('queueElements').innerHTML = queue.map(item => `<div class="element">${item}</div>`).join('');
+            document.getElementById('stackElements').innerHTML = stack.map(item => `<div class="element">${item}</div>`).join('');
+        }
+
+        function explainQueue(message) {
+            document.getElementById('queueExplanation').innerHTML = message;
+        }
+
+        function explainStack(message) {
+            document.getElementById('stackExplanation').innerHTML = message;
+        }
+
+        function enqueue() {
+            const input = document.getElementById('queueInput');
+            if (input.value) {
+                queue.push(input.value);
+                updateDisplay();
+                explainQueue(`Você acabou de enfileirar "${input.value}" na fila. Imagine uma fila de pessoas esperando para comprar ingressos: o novo elemento entra no final da fila e esperará sua vez para ser atendido.`);
+                input.value = '';
+            }
+        }
+
+        function dequeue() {
+            if (queue.length > 0) {
+                const removed = queue.shift();
+                updateDisplay();
+                explainQueue(`Você acabou de desenfileirar "${removed}" da fila. É como se a primeira pessoa da fila de ingressos fosse atendida e saísse: quem estava esperando há mais tempo é o primeiro a sair.`);
+            } else {
+                explainQueue("A fila está vazia. Não há ninguém para atender!");
+            }
+        }
+
+        function push() {
+            const input = document.getElementById('stackInput');
+            if (input.value) {
+                stack.push(input.value);
+                updateDisplay();
+                explainStack(`Você acabou de empilhar "${input.value}" na pilha. Pense em uma pilha de pratos: você sempre coloca o novo prato em cima dos outros.`);
+                input.value = '';
+            }
+        }
+
+        function pop() {
+            if (stack.length > 0) {
+                const removed = stack.pop();
+                updateDisplay();
+                explainStack(`Você acabou de desempilhar "${removed}" da pilha. Como em uma pilha de pratos, você sempre retira o prato do topo, que foi o último a ser colocado.`);
+            } else {
+                explainStack("A pilha está vazia. Não há elementos para remover!");
+            }
+        }
+
+        updateDisplay();
+        explainQueue("Bem-vindo à Fila! Use os controles acima para interagir. Observe como o primeiro a entrar é o primeiro a sair (FIFO).");
+        explainStack("Bem-vindo à Pilha! Use os controles acima para interagir. Observe como o último a entrar é o primeiro a sair (LIFO).");
+    </script>
+</body>
+</html>
