@@ -14,11 +14,11 @@
         </h1>
         <menu>
             <span>
-                <input type="number" placeholder="Digite um número">
+                <input id="searchedNumber" type="number" placeholder="Digite um número" required>
             </span>
             <span>
                 <button class="button" id="submitButton">
-                    Enviar
+                   Iniciar Busca
                 </button>
             </span>
             <span>
@@ -88,8 +88,17 @@
                     </div>
                 </div>
             </div>
+            <div id="mainContentFooter">
+                <article id="status">
+                    Não encontrado
+                </article>
+                <button id="nextStep" class="button">
+                    Próximo passo
+                </button>
+            </div>
         </section>
     </main>
     <script src="../js/arrayGenerator.js"></script>
+    <script src="../js/linearSearch.js"></script>
 </body>
 </html>
