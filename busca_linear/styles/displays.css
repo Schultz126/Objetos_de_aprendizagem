@@ -12,3 +12,95 @@
 .correct {
     background-color: #3DFA6F;   
 }
+
+/* displays.css */
+
+/* --- Array Display Container --- */
+
+#array {
+    display: flex;
+    flex-wrap: wrap; /* Allows the array to wrap if it gets too long */
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px none var(--secondary-color);
+    border-radius: 5px;
+}
+
+/* --- Footer/Control Area --- */
+
+#mainContentFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--box-border-color);
+}
+
+#status {
+    flex-grow: 1;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 0 15px 0 0; /* Space between status and button */
+    color: var(--dark-color);
+    text-align: left;
+    margin-left: 20px;
+}
+
+/* Highlighted status for important messages */
+#status.running {
+    color: var(--primary-color);
+}
+
+#status.completed {
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+#status.not_found {
+    color: var(--danger-color);
+    font-weight: bold;
+}
+
+#nextStep {
+    /* Style inherited from .button in mainStyle.css */
+    background-color: var(--secondary-color);
+    min-width: 150px;
+}
+
+#nextStep:hover {
+    background-color: #5a6268; /* Darker gray */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+    header menu {
+        flex-direction: column;
+    }
+    .menuItem {
+        width: 100%;
+        justify-content: center;
+    }
+    input[type="number"] {
+        width: 100%;
+    }
+    .number_box {
+        width: 50px;
+        height: 50px;
+        font-size: 0.9em;
+    }
+    #mainContentFooter {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #status {
+        text-align: center;
+        padding: 0;
+    }
+}

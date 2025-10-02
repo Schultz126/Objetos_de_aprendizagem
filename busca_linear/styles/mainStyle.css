@@ -1,77 +1,140 @@
-@charset "UTF-8";
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --success-color: #28a745; /* Green */
+    --danger-color: #dc3545; /* Red */
+    --warning-color: #ffc107; /* Yellow */
+    --light-color: #f8f9fa; /* Light Gray */
+    --dark-color: #343a40; /* Dark Gray */
+    --background-color: #e9ecef; /* Lighter background */
+    --box-border-color: #ced4da; /* Box border */
+    --text-color: var(--dark-color);
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --header-height: 80px;
+    --padding-base: 15px;
+}
 
 * {
-    padding: 0px;
-    margin: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #51557a51;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* ESTILOS HEADER*/
+/* --- Header Styles --- */
 
 header {
-    border: 0px solid black;
-    background-color: white;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 15px;
-    width: 85dvw;
-    margin: auto;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.244);
-}
-
-header > h1 {
-    text-align: center;
-    margin: 10px;
-}
-
-menu {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: var(--padding-base);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
-    flex-flow: row wrap;
+    gap: 10px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--light-color);
+}
+
+header menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    list-style: none; /* Menu is a list, remove markers */
+    padding: 0;
 }
 
 .menuItem {
-    margin: 0px 10px;
-}
-
-/* FIM ESTILOS HEADER*/
-.button {
-    padding: 5px;
-    border-radius: 5px;
-    margin-top: 5px;
-    background-color: #283EFA;
-    color: white;
-    font-weight: 600;
-}
-
-/* ESTILOS ARRAY */
-#array_container {
-    padding: 10px;
-    background-color: white;
-    width: 85dvw;
-    margin: auto;
-    border-radius: 15px;
-    margin-top: 20px;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.244);
-}
-
-#status {
-    border: 1px solid black;
-    margin: 0px 5px;
-    width: fit-content;
-    padding: 5px;
-    margin-top: 5px;
-}
-
-#mainContentFooter {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    align-items: center;
 }
-/* FIM ESTILOS ARRAY */
 
+/* --- Input and Button Styles --- */
+
+input[type="number"] {
+    padding: 8px 12px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 1em;
+    width: 150px; /* Fixed width for consistency */
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--light-color);
+    background-color: var(--primary-color);
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+#generateNumbersButton {
+    background-color: var(--success-color);
+}
+
+#generateNumbersButton:hover {
+    background-color: #1e7e34;
+}
+
+#resetButton {
+    background-color: var(--danger-color);
+}
+
+#resetButton:hover {
+    background-color: #bd2130;
+}
+
+/* --- Main Content --- */
+
+main {
+    flex-grow: 1;
+    padding: var(--padding-base);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#array_container {
+    background-color: white;
+    padding: var(--padding-base) * 2;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
