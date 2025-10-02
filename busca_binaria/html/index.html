@@ -110,6 +110,63 @@
                 </button>
             </div>
         </section>
+        <section id="explanation">
+            <h2>Como funciona a busca binária?</h2>
+            <article id="intro">
+                <h3>Ideia geral</h3>
+                <p>A busca binária é um algoritmo eficiente para localizar um elemento em uma coleção ordenada (normalmente em um vetor ou lista ordenada).</p>
+                <p>A ideia central é dividir o espaço de busca pela metade a cada passo, descartando sempre uma das metades, até que o elemento seja encontrado ou se conclua que não está presente.</p>
+                <p>Isso contrasta com a busca linear, que examina os elementos um a um, levando tempo proporcional ao tamanho da coleção.</p>
+            </article>
+            <article id="step_by_step">
+                <h3>Funcionamento passo a passo</h3>
+                <h4>1. Definir os limites de busca</h4>
+                <p>Suponha que temos um vetor ordenado em ordem crescente com n elementos:</p>
+                <ul>
+                    <li>Definir limites de busca:</li>
+                    <li>início = 0 (primeiro índice)</li>
+                    <li>fim = n - 1 (último índice)</li>
+                </ul>
+                <h4>2. Calcular elemento do meio</h4>
+                <ul>
+                    <li>meio = (início + fim) / 2</li>
+                </ul>
+                <h4>3. Comparar o valor procurado (x) com o elemento do meio (A[meio]):</h4>
+                <ul>
+                    <li>Se A[meio] == x, o elemento foi encontrado.</li>
+                    <li>Se A[meio] > x, significa que o valor está à esquerda, então ajustamos fim = meio - 1.</li>
+                    <li>Se A[meio] &lt; x, significa que o valor está à direita, então ajustamos início = meio + 1.</li>
+                </ul>
+                <h4>4.Repetir o processo enquanto início &lt;= fim.</h4>
+                <ul>
+                    <li>Se os limites se cruzarem sem encontrar o elemento, significa que o valor não está presente.</li>
+                </ul>
+                <h3>Complexidade</h3>
+                <h4>Complexidade de tempo</h4>
+                <p>A cada iteração, o algoritmo descarta metade dos elementos.</p>
+                <ul>
+                    <li>Após 1 passo → restam n/2 elementos</li>
+                    <li>Após 2 passos → restam n/4 elementos</li>
+                    <li>Após k passos → restam n / 2^k elementos</li>
+                </ul>
+                <p>O processo termina quando resta somente um elemento: n / 2^k = 1  →  2^k = n  →  k = log₂(n)</p>
+                <p>Portanto:</p>
+                <ul>
+                    <li>Melhor caso: O elemento está exatamente no meio → O(1)</li>
+                    <li>Caso médio e pior caso: Precisa reduzir até 1 elemento → O(log n)</li>
+                </ul>
+                <h4>Complexidade de espaço</h4>
+                <ul>
+                    <li>Implementação iterativa → usa apenas variáveis auxiliares → O(1)</li>
+                    <li>Implementação recursiva → consome memória de pilha proporcional à profundidade da recursão → O(log n)</li>
+                </ul>
+                <h3>Condições de uso</h3>
+                <ul>
+                    <li>O vetor precisa estar ordenado.</li>
+                    <li>O acesso aos elementos deve ser eficiente (ex.: vetores permitem acesso direto O(1)).</li>
+                </ul>
+            </article>
+        </section>
     </main>
     <script src="../js/arrayGenerator.js"></script>
     <script src="../js/binarySearch.js"></script>
