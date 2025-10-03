@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+/* Configurações dos flexbox */
+#buckets {
+    display: flex;
+}
