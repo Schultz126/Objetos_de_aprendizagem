@@ -9,98 +9,98 @@
     <title>Hash Encadeado</title>
 </head>
 <body>
-    <header>
-        <section id="title">
-            <h1>Hash Encadeado</h1>
-            <p>Chave hash utilizada: 7</p>
-        </section>
-        <menu>
-            <input type="number" id="insertedNumber" placeholder="Inserir valor">
-            <button id="insertButton">Inserir</button>
-            <button id="resetButton">reset</button>
-        </menu>
-    </header>
-    <main>
-        <!--Cada bucket também será flex para facilitar as inserções-->
-        <section id="buckets"> <!--Elementos devem preencher a linha inteira-->
-            <div id="1_row" class="row">
-                <div id="1_row_elements" class="elementList"> <!--Os elementos serão dispostos lado a lado na linha-->
-                    <span class="root">0</span> <!--Primeiro elemento de cada fila será usado para representar o vetor de chaves-->
-                </div>
-            </div>
-            <div id="2_row" class="row">
-                <div id="2_row_elements" class="elementList">
-                    <span class="root">1</span>
-                </div>
-            </div>
-            <div id="3_row" class="row">
-                <div id="3_row_elements" class="elementList">
-                    <span class="root">2</span>
-                </div>
-            </div>
-            <div id="4_row" class="row">
-                <div id="4_row_elements" class="elementList">
-                    <span class="root">3</span>
-                </div>
-            </div>
-            <div id="5_row" class="row">
-                <div id="5_row_elements" class="elementList">
-                    <span class="root">4</span>
-                </div>
-            </div>
-            <div id="6_row" class="row">
-                <div id="6_row_elements" class="elementList">
-                    <span class="root">5</span>
-                </div>
-            </div>
-            <div id="7_row" class="row">
-                <div id="7_row_elements" class="elementList">
-                    <span class="root">6</span>
-                </div>
-            </div>
-            <p>Representação visual de como funciona um hash encadeado</p>
-            <div id="explanationBox">
-                <article id="visualExplanation">
+	<header>
+		<section id="title">
+			<h1>Hash Encadeado</h1>
+			<p>Chave hash utilizada: 7</p>
+		</section>
+		<menu>
+			<input type="number" id="insertedNumber" placeholder="Inserir valor">
+			<button id="insertButton">Inserir</button>
+			<button id="resetButton">reset</button>
+		</menu>
+	</header>
+	<main>
+		<!--Cada bucket também será flex para facilitar as inserções-->
+		<section id="buckets"> <!--Elementos devem preencher a linha inteira-->
+			<div id="1_row" class="row">
+				<div id="1_row_elements" class="elementList"> <!--Os elementos serão dispostos lado a lado na linha-->
+					<span class="root">0</span> <!--Primeiro elemento de cada fila será usado para representar o vetor de chaves-->
+				</div>
+			</div>
+			<div id="2_row" class="row">
+				<div id="2_row_elements" class="elementList">
+					<span class="root">1</span>
+				</div>	
+			</div>
+			<div id="3_row" class="row">
+				<div id="3_row_elements" class="elementList">
+					<span class="root">2</span>
+				</div>
+			</div>
+			<div id="4_row" class="row">
+				<div id="4_row_elements" class="elementList">
+					<span class="root">3</span>
+				</div>
+			</div>
+			<div id="5_row" class="row">
+				<div id="5_row_elements" class="elementList">
+					<span class="root">4</span>
+				</div>
+			</div>
+			<div id="6_row" class="row">
+				<div id="6_row_elements" class="elementList">
+					<span class="root">5</span>
+				</div>
+			</div>
+			<div id="7_row" class="row">
+				<div id="7_row_elements" class="elementList">
+					<span class="root">6</span>
+				</div>
+			</div>
+			<p>Representação visual de como funciona um hash encadeado</p>
+			<div id="explanationBox">
+					<article id="visualExplanation">
 
-                </article>
-            </div>
-        </section>
-        <section id="theory">
-            <h2>O que é hash?</h2>
-                 <article id="intro">
-                    <p>De modo simplificado, <strong>hash</strong> é uma função matemática que recebe uma entrada (texto, número, arquivo) e a transforma em uma saída de tamanho fixo. Essa saída é frequentemente uma sequência curta de bits, conhecida como <strong>código hash</strong>.</p> 
-                    <div id="objective">
-                        <h3>Objetivo de se usar hash</h3>
-                        <p>Um dos maiores desafios ao trabalhar com um grande número de dados é a forma de como obter acesso a eles. O uso de <strong>tabelas hash</strong> é uma solução quando se objetiva <strong>alta performance</strong> na inserção, busca e remoção de dados, aproximando-se de um tempo de acesso constante (O(1)).</p>
-                    </div>     
-                    <div id="howItWorks">
-                        <h3>Como funciona e Propriedades Chave</h3>
-                        <p>A função hash utiliza operações matemáticas para transformar uma entrada de dados de maneira aparentemente aleatória, mapeando-a para um índice dentro de uma tabela de tamanho fixo.</p>
-                        <ul>
-                            <li><strong>Saídas de mesmo tamanho</strong>: O código hash gerado tem sempre o mesmo comprimento, independentemente do tamanho da entrada original.</li>
-                            <li><strong>Mesma entrada gera sempre a mesma saída</strong>: A função hash é determinística; inserir os mesmos dados duas vezes resultará exatamente no mesmo código hash e, consequentemente, no mesmo índice de tabela.</li>
-                            <li><strong>Resistência à Colisão (Ideal)</strong>: É extremamente difícil, ou idealmente impossível, encontrar duas entradas diferentes que gerem a mesma saída (o mesmo código hash). No entanto, em tabelas de tamanho limitado, <strong>colisões</strong> (duas chaves mapeando para o mesmo índice) são inevitáveis. </li>
-                        </ul>
-                        <p>Para minimizar o problema das colisões, é comum desenvolvedores optarem por números primos ao escreverem suas funções hash. Tais números garantem padrões menos repetitivos, como por exemplo, potências de 2. O exemplo prático presente neste site utiliza o número 7 para sua função hash, e ainda que seja em pequena escala, auxilia na compreensão do hash</p>
-                    </div>
-                    <div id="practicalApplications">
-                        <h3>Aplicações Práticas</h3>
-                        <p>Funções hash são vitais em diversas áreas da computação, incluindo:</p>
-                        <ul>
-                            <li><strong>Segurança de Dados</strong>: Armazenamento seguro de senhas (nunca se armazena a senha original, mas sim o seu hash).</li>
-                            <li><strong>Verificação de Integridade</strong>: Checagem rápida de arquivos; se um arquivo for alterado, seu hash muda, indicando corrupção.</li>
-                            <li><strong>Estruturas de Dados</strong>: Implementação eficiente de dicionários ou mapas (key-value stores).</li>
-                        </ul>
-                    </div>
-                    <div id="aboutLinkedHash">
-                        <h3>Tabela Hash Encadeada (Chained Hashing)</h3>
-                        <p>Quando duas chaves diferentes (entradas) resultam no mesmo índice na tabela (uma <strong>colisão</strong>), a Tabela Hash Encadeada resolve o problema usando <strong>listas ligadas</strong>.</p>
-                        <p>Em vez de armazenar o item diretamente no índice, cada posição da tabela (cada "bucket") armazena o cabeçalho de uma lista ligada. Se ocorrer uma colisão, o novo item é simplesmente adicionado ao final dessa lista ligada, como demonstrado na visualização acima.</p>
-                    </div>
-                </article>
-            </section>
-        </section>
-    </main>
-    <script src="../js/chainedHash.js"></script>
+					</article>
+			</div>
+		</section>
+			<section id="theory">
+				<h2>O que é hash?</h2>
+					<article id="intro">
+						<p>De modo simplificado, <strong>hash</strong> é uma função matemática que recebe uma entrada (texto, número, arquivo) e a transforma em uma saída de tamanho fixo. Essa saída é frequentemente uma sequência curta de bits, conhecida como <strong>código hash</strong>.</p> 
+						<div id="objective">
+							<h3>Objetivo de se usar hash</h3>
+							<p>Um dos maiores desafios ao trabalhar com um grande número de dados é a forma de como obter acesso a eles. O uso de <strong>tabelas hash</strong> é uma solução quando se objetiva <strong>alta performance</strong> na inserção, busca e remoção de dados, aproximando-se de um tempo de acesso constante (O(1)).</p>
+						</div>     
+						<div id="howItWorks">
+							<h3>Como funciona e Propriedades Chave</h3>
+							<p>A função hash utiliza operações matemáticas para transformar uma entrada de dados de maneira aparentemente aleatória, mapeando-a para um índice dentro de uma tabela de tamanho fixo.</p>
+							<ul>
+								<li><strong>Saídas de mesmo tamanho</strong>: O código hash gerado tem sempre o mesmo comprimento, independentemente do tamanho da entrada original.</li>
+								<li><strong>Mesma entrada gera sempre a mesma saída</strong>: A função hash é determinística; inserir os mesmos dados duas vezes resultará exatamente no mesmo código hash e, consequentemente, no mesmo índice de tabela.</li>
+								<li><strong>Resistência à Colisão (Ideal)</strong>: É extremamente difícil, ou idealmente impossível, encontrar duas entradas diferentes que gerem a mesma saída (o mesmo código hash). No entanto, em tabelas de tamanho limitado, <strong>colisões</strong> (duas chaves mapeando para o mesmo índice) são inevitáveis. </li>
+							</ul>
+							<p>Para minimizar o problema das colisões, é comum desenvolvedores optarem por números primos ao escreverem suas funções hash. Tais números garantem padrões menos repetitivos, como por exemplo, potências de 2. O exemplo prático presente neste site utiliza o número 7 para sua função hash, e ainda que seja em pequena escala, auxilia na compreensão do hash</p>
+						</div>
+						<div id="practicalApplications">
+							<h3>Aplicações Práticas</h3>
+							<p>Funções hash são vitais em diversas áreas da computação, incluindo:</p>
+							<ul>
+								<li><strong>Segurança de Dados</strong>: Armazenamento seguro de senhas (nunca se armazena a senha original, mas sim o seu hash).</li>
+								<li><strong>Verificação de Integridade</strong>: Checagem rápida de arquivos; se um arquivo for alterado, seu hash muda, indicando corrupção.</li>
+								<li><strong>Estruturas de Dados</strong>: Implementação eficiente de dicionários ou mapas (key-value stores).</li>
+							</ul>
+						</div>
+						<div id="aboutLinkedHash">
+							<h3>Tabela Hash Encadeada (Chained Hashing)</h3>
+							<p>Quando duas chaves diferentes (entradas) resultam no mesmo índice na tabela (uma <strong>colisão</strong>), a Tabela Hash Encadeada resolve o problema usando <strong>listas ligadas</strong>.</p>
+							<p>Em vez de armazenar o item diretamente no índice, cada posição da tabela (cada "bucket") armazena o cabeçalho de uma lista ligada. Se ocorrer uma colisão, o novo item é simplesmente adicionado ao final dessa lista ligada, como demonstrado na visualização acima.</p>
+						</div>
+					</article>
+				</section>
+		</section>
+	</main>
+  <script src="../js/chainedHash.js"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@ function createElement(value) {
 
 function visualHash(value, index) {
     var textBox = document.querySelector('article#visualExplanation');
-    let message = `Resto da divisão de ${value} por 7 é ${index}, portanto este será seu índice`; // Template da mensagem que será exibida
+    let message = `Resto da divisão de ${value} por 7 é ${index}, portanto, este será seu índice`; // Template da mensagem que será exibida
 
     textBox.textContent = message;
 }

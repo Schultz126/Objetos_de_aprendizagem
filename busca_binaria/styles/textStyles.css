@@ -1,0 +1,97 @@
+/* ==================================== */
+/* Binary Search Explanation Styles (Alinhado com :root) */
+/* ==================================== */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --success-color: #28a745; /* Green */
+    --danger-color: #dc3545; /* Red */
+    --warning-color: #ffc107; /* Yellow */
+    --light-color: #f8f9fa; /* Light Gray */
+    --dark-color: #343a40; /* Dark Gray */
+    --background-color: #e9ecef; /* Lighter background */
+    --box-border-color: #ced4da; /* Box border */
+    --text-color: var(--dark-color);
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --header-height: 80px;
+    --padding-base: 15px;
+}
+/* Container geral para a teoria */
+#explanation {
+    /* Cor de fundo branca, alinhada com as caixas do array */
+    background-color: var(--light-color); 
+    color: var(--text-color);
+}
+
+#explanation h2 {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: var(--dark-color);
+    margin-bottom: 25px;
+    /* Linha de destaque principal usando a cor primária (Azul) */
+    border-bottom: 3px solid var(--primary-color); 
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Estilo para sub-seções (Ideia Geral, Funcionamento, Complexidade) */
+#explanation h3 {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--primary-color); /* Título de seção principal em azul */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para passos detalhados (1. Definir Limites, 2. Calcular Meio) */
+#explanation h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--dark-color); /* Amarelo/Laranja para destaque dos passos */
+    margin-top: 15px;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    /* Linha lateral de destaque com a cor de warning */
+    border-left: 4px solid var(--dark-color); 
+}
+
+#explanation p {
+    line-height: 1.7; /* Melhor legibilidade */
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    color: var(--text-color);
+}
+
+/* Estilo específico para destacar fórmulas matemáticas (Complexidade) */
+/* Seleciona parágrafos que contêm tags <strong> (usadas para fórmulas no seu HTML) */
+#explanation p:has(strong) {
+    font-weight: 500;
+    background-color: var(--background-color); /* Fundo sutil */
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px dashed var(--box-border-color);
+    text-align: center;
+}
+
+#explanation strong {
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+/* Lista (ul) e itens de lista (li) */
+#explanation ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    margin-bottom: 15px;
+}
+
+#explanation ul li {
+    margin-bottom: 5px;
+    line-height: 1.5;
+    color: var(--dark-color);
+}
+
+/* Destaca a complexidade no item de lista */
+#explanation li strong {
+    color: var(--danger-color); /* Usa vermelho para dar ênfase à notação O() */
+}
