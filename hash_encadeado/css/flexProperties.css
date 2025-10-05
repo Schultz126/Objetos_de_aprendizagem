@@ -40,9 +40,11 @@
     text-align: center;
     padding: 8px 0;
     margin-right: 15px; /* Space between index and elements */
+    border: 2px solid black;
     border-radius: 3px;
     flex-shrink: 0; /* Previne a raiz de diminuir */
 }
+
 
 /* ==================================== */
 /* 4. Element List Styles */
@@ -77,6 +79,3 @@
         right: -15px;
         color: #7f8c8d;
 }
-
-/* You will need to add a class to the new elements you insert, e.g., <span class="element">42</span> */
-/* For now, the .root styling is what's used. The selector above is for future-proofing. */
