@@ -1,0 +1,93 @@
+@charset "UFT-8";
+
+header {
+    /* Set header to be a flex container for side-by-side layout of title and menu */
+    display: flex;
+    /* Space between the title section and the menu section */
+    justify-content: space-between;
+    /* Vertically align items in the center */
+    align-items: center;
+    
+    padding: 15px 20px;
+    background-color: #2c3e50; /* Dark, professional background color (Midnight Blue) */
+    color: #ecf0f1; /* Light text color (Clouds) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Space between header and the visualization below */
+}
+
+/* ==================================== */
+/* Title Section */
+/* ==================================== */
+#title {
+    /* Left side: holds the main title and the hash key info */
+    flex-grow: 1; /* Allows it to take up available space */
+}
+
+#title h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+#title p {
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+    color: #95a5a6; /* Lighter color for secondary text */
+}
+
+/* ==================================== */
+/* Menu/Controls Section */
+/* ==================================== */
+header menu {
+    /* Right side: controls (input and buttons) */
+    display: flex;
+    gap: 10px; /* Space between controls */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    list-style: none; /* Remove list style if it were a ul/ol, good practice for menu */
+}
+
+header input[type="number"] {
+    padding: 8px 12px;
+    border: 2px solid #3498db; /* Clear blue border */
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100px; /* Fixed width for consistency */
+    transition: border-color 0.3s;
+}
+
+header input[type="number"]:focus {
+    border-color: #e67e22; /* Focus color (Carrot) */
+    outline: none;
+}
+
+header button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Specific Button Styles */
+#insertButton {
+    background-color: #3498db; /* Primary Action (Blue) */
+    color: white;
+}
+
+#insertButton:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+#resetButton {
+    background-color: #e74c3c; /* Warning/Reset Action (Red) */
+    color: white;
+}
+
+#resetButton:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+}

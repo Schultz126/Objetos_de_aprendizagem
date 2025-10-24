@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/flexProperties.css">
+    <link rel="stylesheet" href="../css/headerStyle.css">
+    <link rel="stylesheet" href="../css/textStyles.css">
+    <title>Hash Endereçamento Aberto</title>
+</head>
+<body>
+	<header>
+		<section id="title">
+			<h1>Hash Encadeado</h1>
+			<p>Chave hash utilizada: 7</p>
+		</section>
+		<menu>
+			<input type="number" id="insertedNumber" placeholder="Inserir valor">
+			<button id="insertButton">Inserir</button>
+			<button id="resetButton">reset</button>
+		</menu>
+	</header>
+	<main>
+		<!--Cada bucket também será flex para facilitar as inserções-->
+		<section id="buckets"> <!--Elementos devem preencher a linha inteira-->
+			<div id="1_row" class="row">
+				<div id="1_row_elements" class="elementList"> <!--Os elementos serão dispostos lado a lado na linha-->
+					<span class="root">0</span> <!--Primeiro elemento de cada fila será usado para representar o vetor de chaves-->
+				</div>
+			</div>
+			<div id="2_row" class="row">
+				<div id="2_row_elements" class="elementList">
+					<span class="root">1</span>
+				</div>	
+			</div>
+			<div id="3_row" class="row">
+				<div id="3_row_elements" class="elementList">
+					<span class="root">2</span>
+				</div>
+			</div>
+			<div id="4_row" class="row">
+				<div id="4_row_elements" class="elementList">
+					<span class="root">3</span>
+				</div>
+			</div>
+			<div id="5_row" class="row">
+				<div id="5_row_elements" class="elementList">
+					<span class="root">4</span>
+				</div>
+			</div>
+			<div id="6_row" class="row">
+				<div id="6_row_elements" class="elementList">
+					<span class="root">5</span>
+				</div>
+			</div>
+			<div id="7_row" class="row">
+				<div id="7_row_elements" class="elementList">
+					<span class="root">6</span>
+				</div>
+			</div>
+            <div id="1_row" class="row">
+				<div id="1_row_elements" class="elementList openAdress"> <!--Os elementos serão dispostos lado a lado na linha-->
+					<span class="root">7</span> <!--Primeiro elemento de cada fila será usado para representar o vetor de chaves-->
+				</div>
+			</div>
+			<div id="2_row" class="row">
+				<div id="2_row_elements" class="elementList openAdress">
+					<span class="root">8</span>
+				</div>	
+			</div>
+			<div id="3_row" class="row">
+				<div id="3_row_elements" class="elementList openAdress">
+					<span class="root">9</span>
+				</div>
+			</div>
+			<div id="4_row" class="row">
+				<div id="4_row_elements" class="elementList openAdress">
+					<span class="root">10</span>
+				</div>
+			</div>
+			<div id="5_row" class="row">
+				<div id="5_row_elements" class="elementList openAdress">
+					<span class="root">11</span>
+				</div>
+			</div>
+			<div id="6_row" class="row">
+				<div id="6_row_elements" class="elementList openAdress">
+					<span class="root">12</span>
+				</div>
+			</div>
+			<div id="7_row" class="row">
+				<div id="7_row_elements" class="elementList openAdress">
+					<span class="root">13</span>
+				</div>
+			</div>
+			<p>Representação visual de como funciona um hash de endereçamento aberto</p>
+			<div id="explanationBox">
+				<article id="visualExplanation">
+
+				</article>
+			</div>
+		</section>
+    </main>
+    <script src="../js/openAdressHash.js"></script>
+</body>
+</html>
