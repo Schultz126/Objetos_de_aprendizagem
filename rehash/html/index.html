@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/flexProperties.css">
+  <link rel="stylesheet" href="../css/headerStyle.css">
+  <link rel="stylesheet" href="../css/textStyles.css">
+  <link rel="stylesheet" href="../css/loadBar.css">
+  <title>Hash com Rehash</title>
+</head>
+<body>
+  <header>
+    <section id="title">
+      <h1>Hash com Rehash</h1>
+      <p>
+        Nesta página, demonstramos o funcionamento de uma <strong>tabela hash com redimensionamento dinâmico</strong> — 
+        também conhecido como <strong>rehash</strong>. O objetivo é manter a eficiência de inserções e buscas mesmo quando 
+        o número de elementos cresce.
+      </p>
+      <p><strong>Regra:</strong> Quando o fator de carga (&alpha;) ultrapassa 0.7, a tabela dobra de tamanho e todos os elementos são redistribuídos.</p>
+      <p id="loadFactorDisplay">Fator de carga: 0.00 (0 / 7)</p>
+    </section>
+
+    <menu>
+      <input type="number" id="insertedNumber" placeholder="Inserir valor">
+      <button id="insertButton">Inserir</button>
+      <button id="resetButton">Reset</button>
+    </menu>
+  </header>
+
+  <main>
+    <section id="buckets"></section>
+
+    <!-- Seção teórica -->
+    <section id="theory">
+      <article>
+        <h2>🔍 O que é uma Tabela Hash?</h2>
+        <p>
+          Uma <strong>tabela hash</strong> é uma estrutura de dados que associa chaves a posições em um vetor 
+          por meio de uma <em>função hash</em>. Essa função transforma a chave em um índice, 
+          permitindo acessos rápidos — em média, em tempo constante O(1).
+        </p>
+      </article>
+
+      <article>
+        <h2>⚖️ O Fator de Carga (&alpha;)</h2>
+        <p>
+          O <strong>fator de carga</strong>, representado pela letra grega &alpha; (alfa), é a razão entre o número 
+          de elementos armazenados (<em>n</em>) e o tamanho total da tabela (<em>m</em>):
+        </p>
+        <p style="text-align:center;"><code>&alpha; = n / m</code></p>
+        <p>
+          Quando &alpha; cresce demais (por exemplo, &alpha; > 0.7), aumentam as colisões, 
+          tornando as operações mais lentas. Para evitar isso, utilizamos o processo de <strong>rehash</strong>.
+        </p>
+      </article>
+
+      <article>
+        <h2>♻️ O que é o Rehash?</h2>
+        <p>
+          O <strong>rehash</strong> consiste em <strong>criar uma nova tabela maior</strong> e <strong>redistribuir 
+          todos os elementos</strong> usando uma nova função hash ajustada ao novo tamanho.
+        </p>
+        <p>
+          Por exemplo, se inicialmente temos 7 posições e inserimos muitos elementos, 
+          o fator de carga pode ultrapassar o limite. Nesse caso:
+        </p>
+        <ol>
+          <li>O tamanho da tabela é duplicado (de 7 para 14, por exemplo);</li>
+          <li>Todos os elementos são reprocessados usando a nova função <code>hash(x) = x % 14</code>;</li>
+          <li>O fator de carga cai e o desempenho é restaurado.</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>⚙️ Por que o Rehash é Importante?</h2>
+        <p>
+          Sem rehash, uma tabela hash com muitos elementos pode degradar-se para desempenho O(n),
+          semelhante a uma lista encadeada. O rehash mantém o desempenho médio O(1)
+          ao custo de uma operação ocasionalmente mais cara (a realocação).
+        </p>
+        <p>
+          Em geral, o custo do rehash é amortizado, o que significa que, mesmo com 
+          realocações ocasionais, o tempo médio por inserção continua muito eficiente.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <script src="../js/rehashHash.js"></script>
+</body>
+</html>

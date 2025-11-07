@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Árvore Rubro-Negra</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Visualizador de Árvore Rubro-Negra</h1>
+  </header>
+
+  <div id="controls">
+    <input type="number" id="keyInput" placeholder="Valor" />
+    <button id="insertBtn">Inserir</button>
+    <button id="deleteBtn">Remover</button>
+    <button id="randomBtn">Aleatório</button>
+    <button id="clearBtn">Limpar</button>
+    <label><input type="checkbox" id="showColors" checked> Mostrar cores</label>
+  </div>
+
+  <div id="info">
+    <p>Total de nós: <span id="nodeCount">0</span></p>
+    <p>Altura preta da raiz: <span id="blackHeight">0</span></p>
+  </div>
+
+  <div id="canvasWrap">
+    <svg id="svgRoot" width="100%" height="100%"></svg>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

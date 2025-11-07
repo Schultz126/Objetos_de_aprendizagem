@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/* ==================================== */
+/* 1. Global / Container Settings */
+/* ==================================== */
+#buckets {
+    display: block; 
+    /* Largura máxima para melhorar a leitura */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+/* ==================================== */
+/* 2. Bucket (Row) Styles */
+/* ==================================== */
+.row {
+    /* A lista deve se estender pela linha inteira */
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    border: 2px solid #3498db; 
+    border-radius: 5px;
+    margin: 10px 0; 
+    padding: 5px;
+    background-color: #fff; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ==================================== */
+/* 3. Bucket Index (Root) Style */
+/* ==================================== */
+.root {
+    /* The bucket index number */
+    font-weight: bold;
+    color: #fff; /* White text */
+    background-color: #3498db; /* Strong blue background */
+    min-width: 40px; /* Fixed size for uniform look */
+    text-align: center;
+    padding: 8px 0;
+    margin-right: 15px; /* Space between index and elements */
+    border: 2px solid black;
+    border-radius: 3px;
+    flex-shrink: 0; /* Previne a raiz de diminuir */
+}
+
+
+/* ==================================== */
+/* 4. Element List Styles */
+/* ==================================== */
+.elementList {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5px 0; 
+    gap: 10px; /* Espaço entre elementos */
+}
+
+/* Classe a ser adicionada aos elementos colocados no hash */
+.elementList > span:not(.root) {
+    background-color: #ecf0f1; /* Light grey for the inserted elements */
+    border: 1px solid #bdc3c7;
+    padding: 8px 12px;
+    border-radius: 3px;
+    /* Optional: Small arrow to visually suggest the chain/link */
+    position: relative;
+    /* The following is a stylistic addition to show a link/chain */
+     &::after {
+        content: '→';
+        position: absolute;
+        right: -15px;
+        color: #7f8c8d;
+    } 
+}
+
+.newElement::after {
+    content: '→';
+        position: absolute;
+        right: -15px;
+        color: #7f8c8d;
+}

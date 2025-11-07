@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+section#theory {
+    display: block; 
+    /* Largura máxima para melhorar a leitura */
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: white; /* Light background for contrast */
+}
+
+section#buckets > p {
+    font-size: 0.85rem;
+    text-align: right;
+}
+
+/* ==================================== */
+/* Theory Section Styles */
+/* ==================================== */
+#theory {
+    max-width: 900px;
+    margin: 30px auto; /* Margem para separar da grade hash */
+    padding: 25px 30px;
+    background-color: #ffffff; /* Fundo branco para o texto */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+#theory h2 {
+    font-size: 2.2em;
+    font-weight: 800;
+    color: #2c3e50; /* Azul escuro do cabeçalho */
+    margin-bottom: 25px;
+    border-bottom: 3px solid #3498db; /* Sublinha azul clara */
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#theory p {
+    line-height: 1.7; /* Aumenta o espaçamento entre linhas para melhor leitura */
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    color: #333;
+}
+
+#theory strong {
+    color: #3498db; /* Torna o texto em negrito mais visível em azul */
+}
+
+/* Estilo para sub-seções (Objetivo, Como Funciona, etc.) */
+#theory div {
+    margin: 25px 0;
+    padding: 15px;
+    border-left: 5px solid #bdc3c7; /* Linha de separação visual à esquerda */
+    background-color: #f9f9f9; /* Fundo levemente cinza para destacar o bloco */
+    border-radius: 4px;
+}
+
+#theory div h3 {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #e67e22; /* Cor de destaque (laranja) para os títulos de sub-seção */
+    margin-bottom: 15px;
+}
+
+#theory ul {
+    list-style-type: '👉 '; /* Ícone simples para listas */
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+#theory ul li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #555;
+    padding-left: 5px;
+}
+
+#loadFactorDisplay {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+#theory {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#theory h2 {
+  color: #2c3e50;
+  margin-top: 25px;
+}
+
+#theory p, #theory li {
+  line-height: 1.6;
+}
+
+#theory code {
+  background-color: #f0f0f0;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+}

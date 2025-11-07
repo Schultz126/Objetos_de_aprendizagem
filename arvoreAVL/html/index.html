@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visualizador de Árvore AVL</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="controls">
+      <h1>Visualizador de Árvore AVL</h1>
+      <p style="margin:0;color:var(--muted);font-size:13px">Insira chaves inteiras, observe rotações e fatores de balanceamento em tempo real.</p>
+
+      <label for="keyInput">Valor (inteiro)</label>
+      <input id="keyInput" type="number" placeholder="Ex: 42" />
+
+      <div class="row">
+        <button id="insertBtn">Inserir</button>
+        <button id="deleteBtn" class="ghost small">Remover</button>
+      </div>
+
+      <div class="row">
+        <button id="randomBtn" class="ghost small">Inserir Aleatório</button>
+        <button id="clearBtn" class="ghost small">Limpar</button>
+      </div>
+
+      <label style="margin-top:12px"><input id="showBalance" type="checkbox" checked/> Mostrar alturas & fator de balanceamento</label>
+
+      <div class="info">
+        <div style="margin-top:8px">Controles rápidos:</div>
+        <div class="legend">
+          <div class="chip">Clique em nó → detalhes</div>
+          <div class="chip">Scroll/drag no painel para movimentar</div>
+          <div class="chip">Árvore auto-balanceada (AVL)</div>
+        </div>
+      </div>
+
+      <div class="info" id="stats">
+        <div style="margin-top:10px">Nó(s): <span id="nodeCount">0</span></div>
+        <div>Altura da árvore: <span id="treeHeight">0</span></div>
+      </div>
+    </div>
+
+    <div class="canvas" id="canvasWrap">
+      <svg id="svgRoot" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMin meet"></svg>
+    </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

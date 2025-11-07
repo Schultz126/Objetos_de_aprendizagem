@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizador de Árvores B e B+</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Visualizador de Árvores B e B+</h1>
+  </header>
+
+  <section id="controls">
+    <label>Ordem (mín. 3):</label>
+    <input type="number" id="order" value="3" min="3">
+    <label>Tipo:</label>
+    <select id="treeType">
+      <option value="B">Árvore B</option>
+      <option value="B+">Árvore B+</option>
+    </select>
+    <input type="number" id="keyInput" placeholder="Chave">
+    <button id="insertBtn">Inserir</button>
+    <button id="randomBtn">Aleatória</button>
+    <button id="clearBtn">Limpar</button>
+  </section>
+
+  <div id="canvasWrap">
+    <svg id="svgRoot" width="1200" height="800"></svg>
+  </div>
+
+  <!-- 🔍 Seção teórica -->
+  <section id="theory">
+    <h2>📘 Conceitos Teóricos</h2>
+
+    <article>
+      <h3>🌳 O que é uma Árvore B?</h3>
+      <p>
+        A <strong>árvore B</strong> é uma estrutura de dados balanceada utilizada principalmente em sistemas de arquivos e bancos de dados
+        para armazenar grandes volumes de dados de forma eficiente. 
+        Cada nó pode conter múltiplas chaves e filhos, reduzindo a altura da árvore
+        e minimizando o número de acessos à memória secundária.
+      </p>
+      <p>
+        Sua principal característica é que todos os nós folha estão no mesmo nível, 
+        e cada nó (exceto a raiz) deve ter pelo menos <em>t - 1</em> chaves e no máximo <em>2t - 1</em>, 
+        onde <em>t</em> é a <strong>ordem</strong> da árvore.
+      </p>
+    </article>
+
+    <article>
+      <h3>🔗 O que é uma Árvore B+?</h3>
+      <p>
+        A <strong>árvore B+</strong> é uma variação da árvore B que melhora o desempenho em buscas sequenciais.
+        Nela, todas as chaves de dados reais são armazenadas apenas nas folhas, enquanto os nós internos
+        guardam apenas chaves de roteamento (ou índices).
+      </p>
+      <p>
+        Além disso, as folhas são ligadas entre si por ponteiros, formando uma <strong>lista encadeada</strong>.
+        Isso permite percorrer todos os registros de forma ordenada, o que é ideal para consultas em intervalos.
+      </p>
+    </article>
+
+    <article>
+      <h3>⚖️ Diferenças principais entre Árvore B e B+</h3>
+      <table id="comparison">
+        <thead>
+          <tr>
+            <th>Aspecto</th>
+            <th>Árvore B</th>
+            <th>Árvore B+</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Armazenamento de chaves</td>
+            <td>Nos nós internos e folhas</td>
+            <td>Apenas nas folhas</td>
+          </tr>
+          <tr>
+            <td>Busca sequencial</td>
+            <td>Mais lenta</td>
+            <td>Mais rápida (folhas encadeadas)</td>
+          </tr>
+          <tr>
+            <td>Uso em bancos de dados</td>
+            <td>Índices de busca genéricos</td>
+            <td>Índices primários e ordenações</td>
+          </tr>
+          <tr>
+            <td>Altura da árvore</td>
+            <td>Maior (menos chaves por nó)</td>
+            <td>Menor (folhas otimizadas)</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article>
+      <h3>📈 Aplicações práticas</h3>
+      <ul>
+        <li>Gerenciadores de sistemas de arquivos (ex: NTFS, ext4)</li>
+        <li>Índices de bancos de dados relacionais (MySQL, PostgreSQL)</li>
+        <li>Organização de registros em memória secundária</li>
+      </ul>
+    </article>
+  </section>
+
+  <footer>
+    <p>Desenvolvido por Rafael — Visualização e teoria de Árvores B e B+</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

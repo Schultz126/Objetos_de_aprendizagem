@@ -1,0 +1,148 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* 👈 Permite rolar a página */
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #1e293b;
+  color: #38bdf8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #1e293b;
+  padding: 15px;
+  border-bottom: 1px solid #334155;
+}
+
+#controls input,
+#controls select,
+#controls button {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background-color: #334155;
+  color: #f8fafc;
+  font-size: 14px;
+}
+
+#controls button {
+  background-color: #0284c7;
+  cursor: pointer;
+}
+
+#controls button:hover {
+  background-color: #0369a1;
+}
+
+#canvasWrap {
+  width: 100%;
+  height: 600px;
+  overflow: auto; /* 👈 Agora só o SVG é rolável, não o resto da página */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f172a;
+  border-bottom: 2px solid #1e293b;
+  margin-bottom: 30px;
+}
+
+svg {
+  width: 1200px;
+  height: 800px;
+}
+
+/* 🔵 Nós */
+.node {
+  stroke: #1e293b;
+  stroke-width: 2;
+}
+
+.node circle {
+  fill: #1d4ed8;
+  r: 20;
+}
+
+.node text {
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 14px;
+  fill: #f8fafc;
+  pointer-events: none;
+  font-weight: 600;
+}
+
+/* 🌳 Teoria — agora acessível e separada */
+#theory {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  text-align: left;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto 60px auto;
+  line-height: 1.6;
+  border-top: 2px solid #334155;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #1e293b;
+  position: relative;
+  z-index: 1;
+}
+
+#theory h2 {
+  text-align: center;
+  color: #38bdf8;
+  margin-bottom: 1em;
+}
+
+#theory h3 {
+  color: #60a5fa;
+  margin-top: 1.5em;
+}
+
+#theory table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+  background-color: #1e293b;
+}
+
+#theory th, #theory td {
+  border: 1px solid #334155;
+  padding: 10px;
+  text-align: center;
+}
+
+#theory th {
+  background-color: #0ea5e9;
+  color: #f8fafc;
+}
+
+#theory tr:nth-child(even) {
+  background-color: #273449;
+}
+
+#theory ul {
+  list-style-type: '🔹 ';
+  margin-left: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #1e293b;
+  color: #94a3b8;
+}
